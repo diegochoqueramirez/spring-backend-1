@@ -1,28 +1,21 @@
-/**
- * @author: Diego Marcelo Choque Ramirez
- */
+package com.sales.market.dto;
 
-package com.sales.market.model;
+import com.sales.market.model.ItemInventoryEntry;
+import com.sales.market.model.MovementType;
 
-import com.sales.market.dto.ItemInventoryEntryDto;
-
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 
-@Entity
-public class ItemInventoryEntry extends ModelBase<ItemInventoryEntryDto> {
-    @ManyToOne
-    private ItemInventory itemInventory;
+public class ItemInventoryEntryDto extends DtoBase<ItemInventoryEntry> {
+    private ItemInventoryDto itemInventory;
     private MovementType movementType;
     private BigDecimal quantity;
-    private String itemInstanceSkus; //skus
+    private String itemInstanceSkus;
 
-    public ItemInventory getItemInventory() {
+    public ItemInventoryDto getItemInventory() {
         return itemInventory;
     }
 
-    public void setItemInventory(ItemInventory itemInventory) {
+    public void setItemInventory(ItemInventoryDto itemInventory) {
         this.itemInventory = itemInventory;
     }
 

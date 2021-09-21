@@ -28,6 +28,14 @@ public class ItemInstance extends ModelBase<ItemInstanceDto> {
 
     private ItemInstanceStatus itemInstanceStatus;
 
+    public ItemInstanceStatus getItemInstanceStatus() {
+        return itemInstanceStatus;
+    }
+
+    public void setItemInstanceStatus(ItemInstanceStatus itemInstanceStatus) {
+        this.itemInstanceStatus = itemInstanceStatus;
+    }
+
     public Item getItem() {
         return item;
     }
