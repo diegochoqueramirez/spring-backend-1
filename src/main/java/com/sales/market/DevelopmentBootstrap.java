@@ -124,8 +124,8 @@ public class DevelopmentBootstrap implements ApplicationListener<ContextRefreshe
         itemInventory.setItem(item);
         itemInventory.setLowerBoundThreshold(new BigDecimal(lower));
         itemInventory.setUpperBoundThreshold(new BigDecimal(upper));
-        itemInventory.setStockQuantity(itemInstanceService.countAllByItem(item));
-        itemInventory.setTotalPrice(itemInstanceService.countAllByItem(item).multiply(itemInstanceService.sumPricesByItem(item)));
+        itemInventory.setStockQuantity(itemInstanceService.countAllByItemAndItemInstanceStatus(item, ItemInstanceStatus.AVAILABLE));
+        itemInventory.setTotalPrice(itemInstanceService.countAllByItemAndItemInstanceStatus(item, ItemInstanceStatus.AVAILABLE).multiply(itemInstanceService.sumPricesByItemAndItemInstanceStatus(item, ItemInstanceStatus.AVAILABLE )));
         itemInventoryService.save(itemInventory);
         return itemInventory;
     }

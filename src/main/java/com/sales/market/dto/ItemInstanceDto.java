@@ -1,6 +1,7 @@
 package com.sales.market.dto;
 
 import com.sales.market.model.ItemInstance;
+import com.sales.market.model.ItemInstanceStatus;
 
 public class ItemInstanceDto extends DtoBase<ItemInstance> {
     private ItemDto item;
@@ -11,6 +12,15 @@ public class ItemInstanceDto extends DtoBase<ItemInstance> {
     // todo generalmente se usa BigDecimal
     private Double price;
 
+    private ItemInstanceStatus itemInstanceStatus;
+
+    public ItemInstanceStatus getItemInstanceStatus() {
+        return itemInstanceStatus;
+    }
+
+    public void setItemInstanceStatus(ItemInstanceStatus itemInstanceStatus) {
+        this.itemInstanceStatus = itemInstanceStatus;
+    }
 
     public ItemDto getItem() {
         return item;

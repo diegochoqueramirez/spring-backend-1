@@ -13,5 +13,5 @@ import java.util.Optional;
 
 public interface ItemInventoryService extends GenericService<ItemInventory> {
     Optional<List<ItemInventory>> checkInventory();
-    ItemInventory updateInventory(ItemInventoryEntry itemInventoryEntry, MovementType movementType);
+    ItemInventory updateInventory(ItemInventoryEntry itemInventoryEntry);
 }
